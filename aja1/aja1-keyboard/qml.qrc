@@ -1,6 +1,21 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
-        <file>MainForm.ui.qml</file>
+        <file>global.js</file>
+        <file>KeyButton.qml</file>
+        <file>CommandPrompt.qml</file>
+        <file>hit/1.wav</file>
+        <file>hit/2.wav</file>
+        <file>hit/3.wav</file>
+        <file>hit/4.wav</file>
+        <file>hit/5.wav</file>
+        <file>hit/6.wav</file>
+        <file>hit/7.wav</file>
+        <file>hit/8.wav</file>
+        <file>hit/9.wav</file>
+        <file>hit/0.wav</file>
+        <file>hit/10.wav</file>
+        <file>hit/11.wav</file>
+        <file>hit/12.wav</file>
     </qresource>
 </RCC>
