@@ -4,34 +4,40 @@ Item {
 
     signal keyPressed(var event)
 
-    Rectangle {
-        x: 0
-        y: 0
-        width: parent.width
-        height: parent.height / 15
-
-        color: "black"
-        opacity: 0.5
-
-    }
-
     Item {
-        width: parent.width
+        x: parent.width / 100
+        width: parent.width - parent.width / 50
         height: parent.height / 15
-        x: 0
-        y: 0
+
+        Rectangle {
+            id: bgRect
+
+            anchors.fill:  parent;
+
+            radius: border.width
+            border.color: "#123574"
+            color: "#eeeeee";
+            border.width: Math.max(2, parent.width / 150)
+            opacity: 0.7
+        }
 
         TextInput {
-            anchors.fill: parent
+
+            anchors.fill:  parent;
+            anchors.leftMargin: bgRect.border.width * 1.5
+            anchors.rightMargin: bgRect.border.width * 1.5
+
             focus: true
+            clip: true
 
             font.bold: true;
-            font.pixelSize: height * 0.6
+            font.pixelSize: height * 0.55
             verticalAlignment: TextInput.AlignVCenter
-            color: "#ffff00"
+            color: "#366e43"
 
             Keys.onPressed: {
                 keyPressed(event);
+
                 switch(event.key) {
                 case Qt.Key_Backspace:
                 case Qt.Key_Tab:
@@ -39,11 +45,13 @@ Item {
                 case Qt.Key_End:
                 case Qt.Key_Left:
                 case Qt.Key_Right:
+                case Qt.Key_CapsLock:
                         event.accepted = true;
                 }
 
                 console.log(event.key)
             }
+
 
             onTextChanged: {
                 if(text.length > 512) text = text.substring(400)
@@ -52,7 +60,6 @@ Item {
 
         }
     }
-
 }
 
 

@@ -15,12 +15,12 @@ Item {
 
     signal       keyPressed(var event)
 
-    x:                                      Math.floor((parent.width - width) * relativeX)
-    y:                                      Math.floor((parent.height * 14/15 - height) * relativeY + parent.height * 1/15)
+    x:                                      Math.floor(parent.width * relativeX)
+    y:                                      Math.floor(parent.height * relativeY)
     id:                                     button
 
-    width:                                  Math.min(parent.width * relativeWidth, parent.height * relativeWidth)
-    height:                                 Math.min(parent.width * relativeHeight, parent.height * relativeHeight)
+    width:                                  Math.min(parent.width * relativeWidth)
+    height:                                 Math.min(parent.height * relativeHeight)
     opacity:                                0.8
 
     LinearGradient {
@@ -48,7 +48,7 @@ Item {
         id: label
 
         text:  parent.text
-        font.pointSize: Math.max(parent.height * 0.5, 2)
+        font.pointSize: Math.max(Math.min(parent.height * 0.3, parent.width * 0.3), 2)
         font.bold: true
         anchors.verticalCenter: parent.verticalCenter
         anchors.horizontalCenter: parent.horizontalCenter
@@ -104,6 +104,14 @@ Item {
                 to: "white";
                 duration: 200; easing.type: Easing.InOutQuad
             }
+        }
+
+        onStarted: {
+            button.z = 1
+        }
+
+        onStopped: {
+            button.z = 0
         }
 
     }

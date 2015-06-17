@@ -17,5 +17,6 @@
         <file>hit/10.wav</file>
         <file>hit/11.wav</file>
         <file>hit/12.wav</file>
+        <file>Picture.qml</file>
     </qresource>
 </RCC>
