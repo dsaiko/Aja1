@@ -89,21 +89,54 @@ Item {
         source: "qrc:/hit/"+Math.floor(Math.random()*13)+".wav"
     }
 
-    MouseArea {
-        anchors.fill: parent
-        onClicked: {
-            if(sound.length > 0) {
-                var effect = sound[Math.floor(Math.random()*sound.length)];
+
+    function startAnimation() {
+        if(sound.length > 0) {
+            var effect = sound[Math.floor(Math.random()*sound.length)];
+            if(effect.playing) {
+                for(var i=0; i< sound.length; i++) {
+                    if(!effect.playing) {
+                        effect.play();
+                        break;
+                    }
+                }
+            } else {
                 effect.play()
             }
+        }
 
-            animation.start()
+        animation.start()
+    }
+
+    MouseArea {
+        anchors.fill: parent
+        onClicked: startAnimation();
+    }
+
+
+    Component {
+        id: timerFactory
+        Timer {
+           repeat: false
         }
     }
 
+
     onKeyPressed: {
-            //animation.start()
-            //playSound.play()
+        var rnd = Math.floor(Math.random() * 50)
+
+        if(rnd == 1) {
+            var timer = timerFactory.createObject(button, {
+                  interval: Math.random() * 1500
+            });
+
+            timer.triggered.connect(function () {
+                if(!animation.running)
+                    startAnimation();
+            })
+
+            timer.start();
+        }
     }
 }
 

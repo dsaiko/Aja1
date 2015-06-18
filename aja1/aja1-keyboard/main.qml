@@ -103,20 +103,20 @@ ApplicationWindow {
         Component.onCompleted: commandPrompt.keyPressed.connect(keyPressed)
 
         SoundEffect {
-            id: sound1
+            id: cowSound1
             source: "qrc:/sounds/cow-1.wav"
         }
         SoundEffect {
-            id: sound2
+            id: cowSound3
             source: "qrc:/sounds/cow-2.wav"
         }
         SoundEffect {
-            id: sound3
+            id: cowSound4
             source: "qrc:/sounds/cow-3.wav"
         }
 
 
-        sound: [sound1, sound2, sound3]
+        sound: [cowSound1, cowSound3, cowSound4]
     }
 
     Picture {
@@ -166,6 +166,22 @@ ApplicationWindow {
         x: p4.x + p1.width
         source: "qrc:/svg/horse-48394.svg"
         Component.onCompleted: commandPrompt.keyPressed.connect(keyPressed)
+
+        SoundEffect {
+            id:  horseSound1
+            source: "qrc:/sounds/horse-1.wav"
+        }
+        SoundEffect {
+            id: horseSound2
+            source: "qrc:/sounds/horse-2.wav"
+        }
+        SoundEffect {
+            id: horseSound3
+            source: "qrc:/sounds/horse-3.wav"
+        }
+
+
+        sound: [horseSound1, horseSound2, horseSound3]
     }
 
     Component.onCompleted: {

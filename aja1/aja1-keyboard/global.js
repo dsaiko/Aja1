@@ -109,7 +109,7 @@ function number_format(number) {
 
 
 function generateUUID(pattern) {
-    var digits = "0123456789abcdef";
+    var digits = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
     var result = [];
 
     for(var i=0; i<pattern.length; i++) {
