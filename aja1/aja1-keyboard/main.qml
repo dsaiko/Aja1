@@ -6,7 +6,7 @@ import "global.js" as Global
 
 ApplicationWindow {
     visible: true
-    //visibility: Window.FullScreen
+    visibility: Window.FullScreen
 
     id: mainWnd
 
@@ -74,30 +74,37 @@ ApplicationWindow {
 
     Picture {
         id: p1
-
+        source: "qrc:/svg/black-48472.svg"
+        Component.onCompleted: commandPrompt.keyPressed.connect(keyPressed)
     }
 
     Picture {
         id: p2
         x: p1.x + p1.width
-
+        source: "qrc:/svg/cow-44697.svg"
+        Component.onCompleted: commandPrompt.keyPressed.connect(keyPressed)
     }
+
     Picture {
         id: p3
         x: p2.x + p1.width
-
+        source: "qrc:/svg/cat-26648.svg"
+        Component.onCompleted: commandPrompt.keyPressed.connect(keyPressed)
     }
+
     Picture {
         id: p4
         x: p3.x + p1.width
-
+        source: "qrc:/svg/rooster-161546.svg"
+        Component.onCompleted: commandPrompt.keyPressed.connect(keyPressed)
     }
+
     Picture {
         id: p5
         x: p4.x + p1.width
-
+        source: "qrc:/svg/horse-48394.svg"
+        Component.onCompleted: commandPrompt.keyPressed.connect(keyPressed)
     }
-
 
     Component.onCompleted: {
 
@@ -143,9 +150,6 @@ ApplicationWindow {
         nl();
         rx = (1 - (13 * keyWidth * 1.0 + keyWidth * 1.5) - 13 * spacer) / 2
 
-        var ydeltaR = 0.005;
-        var ydelta = 0;
-
         placeKey('`', 96);
         placeKey('1', Qt.Key_1);
         placeKey('2', Qt.Key_2);
@@ -182,9 +186,6 @@ ApplicationWindow {
         nl();
         rx = (1 - (11 * keyWidth * 1.0 + 2 * keyWidth * 1.5) - 12 * spacer) / 2
 
-        var ydeltaR = 0.005;
-        var ydelta = 0;
-
         placeKey('CAPS', Qt.Key_CapsLock, 1.5);
         placeKey('A', Qt.Key_A);
         placeKey('S', Qt.Key_S);
@@ -200,14 +201,11 @@ ApplicationWindow {
         placeKey("ENTER", [Qt.Key_Return, Qt.Key_Enter], 1.5);
 
         nl();
-        var ydeltaR = 0.008;
-        var ydelta = 0;
         rx = (1 - (10 * keyWidth * 1.0 + 2 * keyWidth * 1.9) - 11 * spacer) / 2
         placeKey('SHIFT', Qt.Key_Shift, 1.9,                0);
         placeKey('Z', Qt.Key_Z);
         placeKey('X', Qt.Key_X);
 
-        var ydeltaR = 0.01;
         placeKey('C', Qt.Key_C);
         placeKey('V', Qt.Key_V);
         placeKey('B', Qt.Key_B);
@@ -215,15 +213,12 @@ ApplicationWindow {
         placeKey('M', Qt.Key_M);
         placeKey(',', Qt.Key_Comma);
 
-        var ydeltaR = 0.008;
         placeKey('.', Qt.Key_Period);
         placeKey('/', Qt.Key_Slash);
         placeKey('SHIFT', Qt.Key_Shift, 1.9);
 
 
         nl();
-        var ydeltaR = 0.02;
-        var ydelta = 0;
         rx = (1 - (1 * keyWidth * 5 + 6 * keyWidth * 1.5) - 6 * spacer) / 2
         placeKey('CTR', Qt.Key_Control, 1.5);
         placeKey('WIN', 16777250, 1.5);

@@ -48,10 +48,7 @@ Item {
                 case Qt.Key_CapsLock:
                         event.accepted = true;
                 }
-
-                console.log(event.key)
             }
-
 
             onTextChanged: {
                 if(text.length > 512) text = text.substring(400)

@@ -1,5 +1,8 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
+#include <QPixmap>
+#include <QCursor>
+#include <QDebug>
 
 int main(int argc, char *argv[])
 {
@@ -15,5 +18,12 @@ int main(int argc, char *argv[])
     //TODO: ANIMATION LETTER
     //TODO: ANIMALS + ANIMATION + SOUND
     //ICON
+
+    QPixmap cursor;
+    cursor.load(":/svg/arrow.png");
+    qDebug() << cursor.size();
+
+
+    app.setOverrideCursor(QCursor(cursor, 0, 0));
     return app.exec();
 }
