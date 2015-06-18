@@ -52,7 +52,7 @@ Item {
 
             onTextChanged: {
                 if(text.length > 512) text = text.substring(400)
-                if(text.indexOf("exitexit") != -1) Qt.quit()
+                if(text.indexOf("exit") != -1) Qt.quit()
             }
 
         }

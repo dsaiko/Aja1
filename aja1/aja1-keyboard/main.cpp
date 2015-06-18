@@ -21,9 +21,6 @@ int main(int argc, char *argv[])
 
     QPixmap cursor;
     cursor.load(":/svg/arrow.png");
-    qDebug() << cursor.size();
-
-
     app.setOverrideCursor(QCursor(cursor, 0, 0));
     return app.exec();
 }

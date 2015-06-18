@@ -7,7 +7,7 @@ import "global.js" as Global
 
 ApplicationWindow {
     visible: true
-    visibility: Window.FullScreen
+    //visibility: Window.FullScreen
 
     id: mainWnd
 
@@ -77,6 +77,23 @@ ApplicationWindow {
         id: p1
         source: "qrc:/svg/black-48472.svg"
         Component.onCompleted: commandPrompt.keyPressed.connect(keyPressed)
+
+
+        SoundEffect {
+            id: dogSound1
+            source: "qrc:/sounds/dog-1.wav"
+        }
+        SoundEffect {
+            id: dogSound2
+            source: "qrc:/sounds/dog-2.wav"
+        }
+        SoundEffect {
+            id: dogSound3
+            source: "qrc:/sounds/dog-3.wav"
+        }
+
+
+        sound: [dogSound1, dogSound2, dogSound3]
     }
 
     Picture {
@@ -87,22 +104,19 @@ ApplicationWindow {
 
         SoundEffect {
             id: sound1
-            source: "qrc:/hit/0.wav"
+            source: "qrc:/sounds/cow-1.wav"
         }
-
         SoundEffect {
             id: sound2
-            source: "qrc:/sound/cow-2.wav"
+            source: "qrc:/sounds/cow-2.wav"
         }
-
         SoundEffect {
             id: sound3
-            source: "qrc:/sound/cow-3.wav"
+            source: "qrc:/sounds/cow-3.wav"
         }
 
 
         sound: [sound1, sound2, sound3]
-
     }
 
     Picture {
@@ -110,6 +124,18 @@ ApplicationWindow {
         x: p2.x + p1.width
         source: "qrc:/svg/cat-26648.svg"
         Component.onCompleted: commandPrompt.keyPressed.connect(keyPressed)
+
+        SoundEffect {
+            id: catSound2
+            source: "qrc:/sounds/cat-2.wav"
+        }
+        SoundEffect {
+            id: catSound3
+            source: "qrc:/sounds/cat-3.wav"
+        }
+
+
+        sound: [catSound2, catSound3]
     }
 
     Picture {
@@ -117,6 +143,22 @@ ApplicationWindow {
         x: p3.x + p1.width
         source: "qrc:/svg/rooster-161546.svg"
         Component.onCompleted: commandPrompt.keyPressed.connect(keyPressed)
+
+        SoundEffect {
+            id: roosterSound1
+            source: "qrc:/sounds/rooster-1.wav"
+        }
+        SoundEffect {
+            id: roosterSound2
+            source: "qrc:/sounds/rooster-2.wav"
+        }
+        SoundEffect {
+            id: roosterSound3
+            source: "qrc:/sounds/rooster-3.wav"
+        }
+
+
+        sound: [roosterSound1, roosterSound2, roosterSound3]
     }
 
     Picture {

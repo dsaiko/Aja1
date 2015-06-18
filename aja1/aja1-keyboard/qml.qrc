@@ -27,5 +27,13 @@
         <file>sounds/cow-1.wav</file>
         <file>sounds/cow-2.wav</file>
         <file>sounds/cow-3.wav</file>
+        <file>sounds/cat-2.wav</file>
+        <file>sounds/cat-3.wav</file>
+        <file>sounds/rooster-1.wav</file>
+        <file>sounds/rooster-2.wav</file>
+        <file>sounds/rooster-3.wav</file>
+        <file>sounds/dog-1.wav</file>
+        <file>sounds/dog-2.wav</file>
+        <file>sounds/dog-3.wav</file>
     </qresource>
 </RCC>
