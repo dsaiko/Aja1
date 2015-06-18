@@ -7,6 +7,9 @@ import "global.js" as Global
 
 Item {
     property alias source: image.source
+    property var sound: []
+
+
     signal       keyPressed(var event)
     id: button
 
@@ -29,8 +32,6 @@ Item {
     y: parent.height - height
     width:parent.width / 5
     height: parent.height / 3.3
-
-
 
 
     ParallelAnimation {
@@ -91,8 +92,12 @@ Item {
     MouseArea {
         anchors.fill: parent
         onClicked: {
+            if(sound.length > 0) {
+                var effect = sound[Math.floor(Math.random()*sound.length)];
+                effect.play()
+            }
+
             animation.start()
-            playSound.play()
         }
     }
 

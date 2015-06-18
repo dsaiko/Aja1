@@ -1,6 +1,7 @@
 import QtQuick 2.4
 import QtQuick.Window 2.1
 import QtQuick.Controls 1.2
+import QtMultimedia 5.0
 
 import "global.js" as Global
 
@@ -83,6 +84,25 @@ ApplicationWindow {
         x: p1.x + p1.width
         source: "qrc:/svg/cow-44697.svg"
         Component.onCompleted: commandPrompt.keyPressed.connect(keyPressed)
+
+        SoundEffect {
+            id: sound1
+            source: "qrc:/hit/0.wav"
+        }
+
+        SoundEffect {
+            id: sound2
+            source: "qrc:/sound/cow-2.wav"
+        }
+
+        SoundEffect {
+            id: sound3
+            source: "qrc:/sound/cow-3.wav"
+        }
+
+
+        sound: [sound1, sound2, sound3]
+
     }
 
     Picture {
