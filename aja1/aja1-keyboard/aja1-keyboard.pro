@@ -2,7 +2,10 @@ TEMPLATE = app
 
 QT += qml quick multimedia svg
 
-SOURCES += main.cpp
+QMAKE_CXXFLAGS += -std=c++11
+
+SOURCES += main.cpp \
+    mainwindow.cpp
 
 RESOURCES += qml.qrc
 
@@ -11,3 +14,7 @@ QML_IMPORT_PATH =
 
 # Default rules for deployment.
 include(deployment.pri)
+
+HEADERS +=  mainwindow.h
+
+LIBS += -lX11

@@ -5,16 +5,8 @@ import QtMultimedia 5.0
 
 import "global.js" as Global
 
-ApplicationWindow {
-    visible: true
-    //visibility: Window.FullScreen
-
+Item {
     id: mainWnd
-
-    width: Screen.width * 2/3
-    height: Screen.height * 2/3;
-    x: (Screen.width - width)/2
-    y: (Screen.height - height)/2
 
     Repeater {
         model: 250
