@@ -4,40 +4,7 @@
         <file>global.js</file>
         <file>KeyButton.qml</file>
         <file>CommandPrompt.qml</file>
-        <file>hit/1.wav</file>
-        <file>hit/2.wav</file>
-        <file>hit/3.wav</file>
-        <file>hit/4.wav</file>
-        <file>hit/5.wav</file>
-        <file>hit/6.wav</file>
-        <file>hit/7.wav</file>
-        <file>hit/8.wav</file>
-        <file>hit/9.wav</file>
-        <file>hit/0.wav</file>
-        <file>hit/10.wav</file>
-        <file>hit/11.wav</file>
-        <file>hit/12.wav</file>
         <file>Picture.qml</file>
-        <file>svg/black-48472.svg</file>
-        <file>svg/cat-26648.svg</file>
-        <file>svg/cow-44697.svg</file>
-        <file>svg/horse-48394.svg</file>
-        <file>svg/rooster-161546.svg</file>
-        <file>svg/arrow.png</file>
-        <file>sounds/cow-1.wav</file>
-        <file>sounds/cow-2.wav</file>
-        <file>sounds/cow-3.wav</file>
-        <file>sounds/cat-2.wav</file>
-        <file>sounds/cat-3.wav</file>
-        <file>sounds/rooster-1.wav</file>
-        <file>sounds/rooster-2.wav</file>
-        <file>sounds/rooster-3.wav</file>
-        <file>sounds/dog-1.wav</file>
-        <file>sounds/dog-2.wav</file>
-        <file>sounds/dog-3.wav</file>
-        <file>sounds/horse-1.wav</file>
-        <file>sounds/horse-2.wav</file>
-        <file>sounds/horse-3.wav</file>
         <file>FlyLetter.qml</file>
     </qresource>
 </RCC>

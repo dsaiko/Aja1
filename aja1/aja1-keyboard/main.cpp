@@ -15,28 +15,27 @@
 int main(int argc, char *argv[])
 {
 
-    QGuiApplication *app = new QGuiApplication(argc, argv);
+    QGuiApplication app(argc, argv);
 
     QPixmap cursor;
     cursor.load(":/svg/arrow.png");
-    app->setOverrideCursor(QCursor(cursor, 0, 0));
+    app.setOverrideCursor(QCursor(cursor, 0, 0));
 
-    MainWindow w;
+    QQuickView mainWindow;
+    mainWindow.setSource(QUrl("qrc:///main.qml"));
+    mainWindow.setWindowState(Qt::WindowFullScreen);
+    mainWindow.setFlags(Qt::X11BypassWindowManagerHint | Qt::WindowStaysOnTopHint | Qt::FramelessWindowHint);
 
-
-    w.setResizeMode(QQuickView::SizeRootObjectToView);
-    w.setSource(QUrl("qrc:///main.qml"));
-    w.setWindowState(Qt::WindowFullScreen);
-    w.setFlags(Qt::X11BypassWindowManagerHint | Qt::WindowStaysOnTopHint | Qt::FramelessWindowHint);
     QSize screen = QApplication::primaryScreen()->size();
-    w.setWidth(screen.width()/2);
-    w.setHeight(screen.height()/2);
+    mainWindow.setWidth(screen.width()/2);
+    mainWindow.setHeight(screen.height()/2);
+    mainWindow.showFullScreen();
+    mainWindow.raise();
 
-    QQmlEngine *engine = QtQml::qmlEngine((QObject *)w.rootObject());
-    QObject::connect(engine, SIGNAL(quit()), app, SLOT(quit())); // to make Qt.quit() to work.
-    w.showFullScreen();
+    QQmlEngine *engine = QtQml::qmlEngine((QObject *)mainWindow.rootObject());
+    QObject::connect(engine, SIGNAL(quit()), &app, SLOT(quit())); // to make Qt.quit() to work.
 
-    return app->exec();
+    return app.exec();
 
     //TODO: FLOCK, PRINTSCREEN, CTRL+ALT+DELETE
     //ALT+TAB, set CAPSLOCK OFF ALT+F4

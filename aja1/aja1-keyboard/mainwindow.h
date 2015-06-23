@@ -3,6 +3,7 @@
 
 #include <QObject>
 #include <QQuickView>
+#include <QMainWindow>
 
 class MainWindow: public QQuickView
 {

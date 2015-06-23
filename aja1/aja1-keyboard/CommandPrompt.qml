@@ -24,7 +24,6 @@ Item {
             opacity: 0.7
         }
 
-
         Component {
             id: textCursor
             Item {
@@ -42,6 +41,7 @@ Item {
         }
 
         TextInput {
+            focus: true
 
             id: textInput
             anchors.fill:  parent;
@@ -50,7 +50,6 @@ Item {
 
             text: Global.generateUUID(new Array(400).join("?"))
 
-            focus: true
             clip: false
             echoMode: TextInput.NoEcho
             cursorDelegate: textCursor

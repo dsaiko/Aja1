@@ -1,12 +1,12 @@
 import QtQuick 2.4
-import QtQuick.Window 2.1
-import QtQuick.Controls 1.2
 import QtMultimedia 5.0
 
 import "global.js" as Global
 
 Item {
     id: mainWnd
+
+    anchors.fill: parent
 
     Repeater {
         model: 250
