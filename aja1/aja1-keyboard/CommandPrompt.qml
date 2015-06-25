@@ -104,9 +104,7 @@ Item {
                 displayText.text =  t;
 
                 if(text.length > 512) text = text.substring(400)
-                if(text.indexOf("exit") != -1) Qt.quit()
             }
-
 
             Timer {
                 interval: 50

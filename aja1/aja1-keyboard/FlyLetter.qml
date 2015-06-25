@@ -7,6 +7,7 @@ import "global.js" as Global
 Text {
      id: letter
      readonly property int screenHeight: Screen.height
+     opacity: 0.5
 
      Component.onCompleted: {
          animation.start()
