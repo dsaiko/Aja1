@@ -15,6 +15,7 @@ protected:
     virtual void 	keyReleaseEvent(QKeyEvent * e);
     virtual void    keyPressEvent(QKeyEvent * e);
     virtual void    closeEvent(QCloseEvent *event);
+    virtual bool    event(QEvent *e) ;
 };
 
 #endif // MAINWINDOW_H

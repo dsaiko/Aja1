@@ -298,4 +298,5 @@ Item {
         placeKey('WIN', 16777301, 1.5);
         placeKey('CTR', Qt.Key_Control, 1.5);
     }
+
 }

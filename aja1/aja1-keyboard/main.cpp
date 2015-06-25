@@ -13,8 +13,6 @@
 
 int main(int argc, char *argv[])
 {
-    //TODO: alt+F4
-    //CAPS LOCK  - LINUX
     QGuiApplication app(argc, argv);
 
     QPixmap cursor;

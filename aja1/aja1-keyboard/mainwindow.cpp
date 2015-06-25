@@ -1,7 +1,7 @@
 #include "mainwindow.h"
 #include <QDebug>
 
-#ifdef Q_WS_X11
+#ifdef Q_OS_LINUX
 #include <X11/Xlib.h>
 #include <X11/XKBlib.h>
 
@@ -30,7 +30,7 @@ MainWindow::MainWindow()
 void MainWindow::keyReleaseEvent(QKeyEvent *e)
 {
     QQuickView::keyReleaseEvent(e);
-#ifdef Q_WS_X11
+#ifdef Q_OS_LINUX
     if(e->key() == Qt::Key_CapsLock) {
         setCapslockOff();
     }
@@ -39,10 +39,21 @@ void MainWindow::keyReleaseEvent(QKeyEvent *e)
 
 void MainWindow::keyPressEvent(QKeyEvent *e)
 {
-    QQuickView::keyPressEvent(e);
+   QQuickView::keyPressEvent(e);
 }
 
 void MainWindow::closeEvent(QCloseEvent *event)
 {
     event->ignore();
+}
+
+
+bool MainWindow::event(QEvent *e)
+{
+       int type = e->type();
+       if (type == QEvent::Close) {
+           e->ignore();
+           return true;
+       }
+       return QWindow::event(e);
 }
