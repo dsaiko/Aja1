@@ -1,8 +1,9 @@
 #include "mainwindow.h"
 #include <QDebug>
+
+#ifdef Q_WS_X11
 #include <X11/Xlib.h>
 #include <X11/XKBlib.h>
-
 
 #define SCROLLLOCK 1
 #define CAPSLOCK 2
@@ -19,6 +20,8 @@ void setCapslockOff() {
    XCloseDisplay(dpy);
 }
 
+#endif
+
 MainWindow::MainWindow()
 {
 
@@ -27,9 +30,11 @@ MainWindow::MainWindow()
 void MainWindow::keyReleaseEvent(QKeyEvent *e)
 {
     QQuickView::keyReleaseEvent(e);
+#ifdef Q_WS_X11
     if(e->key() == Qt::Key_CapsLock) {
         setCapslockOff();
     }
+#endif
 }
 
 void MainWindow::keyPressEvent(QKeyEvent *e)
@@ -37,3 +42,7 @@ void MainWindow::keyPressEvent(QKeyEvent *e)
     QQuickView::keyPressEvent(e);
 }
 
+void MainWindow::closeEvent(QCloseEvent *event)
+{
+    event->ignore();
+}

@@ -2,7 +2,10 @@ TEMPLATE = app
 
 QT += qml quick multimedia svg
 
-QMAKE_CXXFLAGS += -std=c++11
+
+unix {
+    QMAKE_CXXFLAGS += -std=c++11
+}
 
 SOURCES += main.cpp \
     mainwindow.cpp
@@ -18,4 +21,9 @@ include(deployment.pri)
 
 HEADERS +=  mainwindow.h
 
-LIBS += -lX11
+unix {
+    LIBS += -lX11
+}
+
+RC_FILE = aja1-keyboard.rc
+

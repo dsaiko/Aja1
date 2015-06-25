@@ -8,8 +8,9 @@ Item {
     signal keyPressed(var event)
 
     Item {
+        id: prompt
         x: parent.width / 100
-        width: parent.width - parent.width / 50
+        width: parent.width - parent.width / 50 - parent.width / 20
         height: parent.height / 15
 
         Rectangle {
@@ -22,7 +23,7 @@ Item {
             color: "#eeeeee";
             border.width: Math.max(2, parent.width / 150)
             opacity: 0.7
-        }
+        }        
 
         Component {
             id: textCursor
@@ -127,4 +128,25 @@ Item {
 
         }
     }
+
+    Rectangle {
+        x: prompt.x + prompt.width
+        width: parent.width / 20
+        height: parent.height / 15
+        color: "transparent";
+
+        Image {
+            anchors.fill:  parent
+            source: "qrc:///exit.png"
+            smooth: true
+            mipmap: true
+
+            MouseArea {
+                anchors.fill: parent
+                onClicked: Qt.quit()
+            }
+       }
+
+    }
+
 }

@@ -33,5 +33,7 @@
         <file>svg/cow-44697.svg</file>
         <file>svg/horse-48394.svg</file>
         <file>svg/rooster-161546.svg</file>
+        <file>icon.png</file>
+        <file>exit.png</file>
     </qresource>
 </RCC>

@@ -1,20 +1,20 @@
-#include <QApplication>
 #include <QQmlApplicationEngine>
 #include <QPixmap>
 #include <QCursor>
 #include <QDebug>
 #include <QList>
 #include <QWindow>
-#include <QMainWindow>
 #include <QScreen>
 #include <QQuickView>
 #include <QSize>
+#include <QGuiApplication>
 
 #include "mainwindow.h"
 
 int main(int argc, char *argv[])
 {
-
+    //TODO: alt+F4
+    //CAPS LOCK  - LINUX
     QGuiApplication app(argc, argv);
 
     QPixmap cursor;
@@ -24,8 +24,7 @@ int main(int argc, char *argv[])
     MainWindow mainWindow;
     mainWindow.setSource(QUrl("qrc:///main.qml"));
     mainWindow.setWindowState(Qt::WindowFullScreen);
-    mainWindow.setFlags(Qt::FramelessWindowHint);
-
+    mainWindow.setIcon(QIcon(":/icon.png"));
     mainWindow.showFullScreen();
     mainWindow.raise();
 

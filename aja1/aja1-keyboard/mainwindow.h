@@ -3,7 +3,6 @@
 
 #include <QObject>
 #include <QQuickView>
-#include <QMainWindow>
 
 class MainWindow: public QQuickView
 {
@@ -15,6 +14,7 @@ public:
 protected:
     virtual void 	keyReleaseEvent(QKeyEvent * e);
     virtual void    keyPressEvent(QKeyEvent * e);
+    virtual void    closeEvent(QCloseEvent *event);
 };
 
 #endif // MAINWINDOW_H
